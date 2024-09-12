@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Профиль</h1>
+<form method="POST">
+    <label for="phone">
+        Телефон:</label> {{ user.phone }} <br>
+    <br>
+    <label for="username">
+        Имя:</label> {{ user.username }} <br>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .hidden:target {
+            display: block;
+        }
+    </style>
+    <a href="#myElement">Редактировать имя</a>
+        <div id="myElement" class="hidden">
+            <input type="text"
+            id="username"
+            name="username"><br>
+        <input type="submit"
+            value="Сохранить изменения"><br>
+        </div>
+        <br>
+
+    <label for="birthdayDate">
+        Дата рождения:</label><br>
+    <a href="#myElement2">Редактировать дату рождения</a>
+        <div id="myElement2" class="hidden">
+            <input type="text"
+            id="birthDate"
+            name="birthDate"><br>
+        <input type="submit"
+            value="Сохранить изменения"><br>
+        </div>
+        <br>
+</form>
+    <br>
+    <a href="{{ url_for('user', id=user.id) }}/password_change">Изменить пароль</a><br>
+    <a href="/" class="button">Перейти на главную страницу</a>
+</body>
+
+</html>
